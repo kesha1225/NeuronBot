@@ -6,8 +6,9 @@ from neuron import send_and_gen_sentence, write_words
 import random
 from vk_interaction import get_vk, gid
 import os
+from dotenv import load_dotenv
 
-RANDOM_SEND = 1
+RANDOM_SEND = os.getenv("RANDOM_RULE")
 
 
 dp = Dispatcher(get_vk(), gid)
