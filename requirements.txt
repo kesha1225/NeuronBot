@@ -1,0 +1,2 @@
+https://github.com/prostomarkeloff/vk.py/archive/master.zip --upgrade
+mc.py
