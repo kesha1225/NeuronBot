@@ -1,31 +1,36 @@
-## Генерация текста на основе сообщений в беседе или лс бота с помощью цепей маркова
 
-#### Установка
+<h1>Генерация теста на основе сообщений в беседе или лс бота с помощью цепей Маркова</h1>
+<p align="center">Для корректной работы бота установите самую последнюю версию api.
+  
+### Установка:
 ```
-git clone https://github.com/kesha1225/NeuronBot.git
+$ git clone https://github.com/kesha1225/NeuronBot.git
 
-pip install mc.py
-pip install https://github.com/prostomarkeloff/vk.py/archive/master.zip --upgrade
+$ pip3 install -r requirements.txt
 ```
-#### Настройка
+### Настройка(конфиг .env):
+
+###### Отправка случайных сообщений
 ```python
-RANDOM_SEND = 1 #  Будут ли отправляться случайные сообщения
+RANDOM_SEND = 1 
+```
+###### Размер предложения
+```
+words = generator.generate(count=random.randint(1, 10)) 
 ```
 
-##### Токен и айди устанавливается в файле vk_interaction.py
+###### Токен и айди группы
 ```python
 gid = 123123 #  Айди группы
 token = "token" #  Токен
 ```
 
-###### Версия api в группе должна стоять последняя
 
-Размер сгенерированного предложения менять здесь (По умолчанию от 1 до 10 слов)
+
+
+## Запуск
 ```
-words = generator.generate(count=random.randint(1, 10)) 
+$ python3 bot.py
 ```
 
-#### Запуск
-```
-python3 bot.py
-```
+
