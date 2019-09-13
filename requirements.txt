@@ -1,0 +1,3 @@
+https://github.com/prostomarkeloff/vk.py/archive/master.zip
+mc.py
+python-dotenv
