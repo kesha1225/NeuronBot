@@ -5,8 +5,6 @@
 ### Установка:
 ```
 $ git clone https://github.com/kesha1225/NeuronBot.git
-=======
-## Генерация текста на основе сообщений в беседе или лс бота с помощью цепей Маркова
 
 $ pip3 install -r requirements.txt
 ```
