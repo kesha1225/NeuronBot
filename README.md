@@ -8,7 +8,7 @@ $ git clone https://github.com/kesha1225/NeuronBot.git
 
 $ pip3 install -r requirements.txt
 ```
-### Настройка:
+### Настройка(Конфиг .env):
 
 ###### Отправка случайных сообщений
 ```python
