@@ -1,5 +1,13 @@
 ## Генерация текста на основе сообщений в беседе или лс бота с помощью цепей маркова
 
+#### Установка
+```
+git clone https://github.com/kesha1225/NeuronBot.git
+
+pip install mc.py
+pip install https://github.com/prostomarkeloff/vk.py/archive/master.zip --upgrade
+```
+
 ```python
 RANDOM_SEND = 1 #  Будут ли отправляться случайные сообщения
 ```
