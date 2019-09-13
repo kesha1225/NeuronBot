@@ -5,11 +5,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 gid = os.getenv("GROUP_ID")
 token = os.getenv("TOKEN")
-
-
 
 
 def get_api():
