@@ -7,7 +7,7 @@ git clone https://github.com/kesha1225/NeuronBot.git
 pip install mc.py
 pip install https://github.com/prostomarkeloff/vk.py/archive/master.zip --upgrade
 ```
-
+#### Настройка
 ```python
 RANDOM_SEND = 1 #  Будут ли отправляться случайные сообщения
 ```
@@ -25,7 +25,7 @@ token = "token" #  Токен
 words = generator.generate(count=random.randint(1, 10)) 
 ```
 
-### Запуск
+#### Запуск
 ```
 python3 bot.py
 ```
