@@ -6,8 +6,15 @@ from neuron import send_and_gen_sentence, write_words
 import random
 from vk_interaction import get_vk, gid
 import os
+from dotenv import load_dotenv
+import logging
 
-RANDOM_SEND = 1
+logging.basicConfig(level=logging.DEBUG)
+
+
+load_dotenv()
+
+RANDOM_SEND = os.getenv("RANDOM_RULE")
 
 
 dp = Dispatcher(get_vk(), gid)
@@ -19,7 +26,7 @@ async def generate(message: types.Message, data: dict):
         await task()
 
 
-@dp.message_handler(commands=["info"])
+@dp.message_handler(commands=["INFO"])
 async def info(message: types.Message, data: dict):
     await message.answer("Working...")
 
