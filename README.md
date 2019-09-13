@@ -15,7 +15,7 @@ $ pip3 install -r requirements.txt
 RANDOM_SEND = 1 
 ```
 ###### Размер предложения
-```python
+```
 words = generator.generate(count=random.randint(1, 10)) 
 ```
 
