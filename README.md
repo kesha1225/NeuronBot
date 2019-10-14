@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![code-style](https://img.shields.io/badge/code--style-black-%23000000)
 <h1>Генерация текста на основе сообщений в беседе или лс бота с помощью цепей Маркова</h1>
 <p align="center">Для корректной работы бота установите самую последнюю версию api.
