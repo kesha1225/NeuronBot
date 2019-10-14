@@ -1,12 +1,6 @@
 from vk import VK
 import random
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-gid = os.getenv("GROUP_ID")
-token = os.getenv("TOKEN")
+from config import token, gid
 
 
 def get_api():
