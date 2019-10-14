@@ -5,7 +5,7 @@ import os
 
 
 def write_words(*args):
-    text, file = args[0]
+    text, file = args
     with open(file, 'a') as f:
         f.write(text + ',')
 
