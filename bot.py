@@ -1,7 +1,7 @@
 from vk.utils import TaskManager
 from vk.bot_framework import Dispatcher
-from utils.vk_interaction import get_vk
-from utils.config import gid
+from utils import get_vk
+from utils import gid
 import logging
 from middlewares import MessageCheckMiddleware
 from blueprints import generate_bp, info_bp, remember_bp

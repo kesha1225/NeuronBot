@@ -1,5 +1,4 @@
 from vk import types
-from vk import VK
 from vk.bot_framework.dispatcher import Blueprint
 
 

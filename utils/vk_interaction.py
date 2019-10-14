@@ -1,6 +1,6 @@
 from vk import VK
 import random
-from utils.config import token
+from utils import token
 
 
 def get_api():

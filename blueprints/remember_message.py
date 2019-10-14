@@ -3,7 +3,7 @@ from vk.bot_framework.dispatcher import Blueprint
 import random
 from neuron import send_and_gen_sentence, write_words
 from vk import BackgroundTask
-from utils.config import RANDOM_SEND
+from utils import RANDOM_SEND
 
 bp = Blueprint()
 

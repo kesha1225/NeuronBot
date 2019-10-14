@@ -2,7 +2,7 @@ from vk import types
 from vk.bot_framework.dispatcher import Blueprint
 from vk import BackgroundTask
 from neuron import send_and_gen_sentence
-from utils.vk_interaction import get_api
+from utils import get_api
 
 bp = Blueprint()
 
