@@ -12,12 +12,12 @@ bp = Blueprint()
 async def undefined(message: types.Message, data: dict):
     if random.randint(0, 33) == 24 and RANDOM_SEND == 1:
         async with BackgroundTask(
-                send_and_gen_sentence,
-                f"dialogs/dialogs{message.peer_id}.txt",
-                message.peer_id,
+            send_and_gen_sentence,
+            f"dialogs/dialogs{message.peer_id}.txt",
+            message.peer_id,
         ) as task:
             await task()
     async with BackgroundTask(
-            write_words, message.text, f"dialogs/dialogs{message.peer_id}.txt"
+        write_words, message.text, f"dialogs/dialogs{message.peer_id}.txt"
     ) as task:
         await task()
