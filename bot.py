@@ -16,8 +16,14 @@ load_dotenv()
 
 RANDOM_SEND = os.getenv("RANDOM_RULE")
 
-
 dp = Dispatcher(get_vk(), gid)
+
+
+def checker(message):
+    haha = ['вхыфахфыва', 'га га га', '{F{AD{F{DS{', 'АХААХ', 'АХВАХАХВЫХАХ', 'ахахаах', 'АЫВХАХЫВХ', 'АХАХХ',
+            'АХВАХАХВЫХАХ', 'АЫВХАХЫВХ', '?g', 'g', ",п", '/п', 'хввх', '[f[f[f', 'хахахва', 'авзхпвапъавъзпва',
+            'АХЫВХАХЫВХ', 'ахвахвх', 'вхахых', 'авхахвахв', 'ахывхахывх', "вхыахывх", "авхавы"]
+    return len(message.text) > 250 or message.text in haha or message.text.startswith('htt') or message.from_id < 0
 
 
 @dp.message_handler(commands=["g", "gen", "generate"])
@@ -37,8 +43,9 @@ async def undefined(message: types.Message, data: dict):
         async with BackgroundTask(send_and_gen_sentence,
                                   f'dialogs/dialogs{message.peer_id}.txt', message.peer_id) as task:
             await task()
-    async with BackgroundTask(write_words, message.text, f'dialogs/dialogs{message.peer_id}.txt') as task:
-        await task()
+    if not checker(message):
+        async with BackgroundTask(write_words, message.text, f'dialogs/dialogs{message.peer_id}.txt') as task:
+            await task()
 
 
 async def run():
