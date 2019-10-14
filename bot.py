@@ -11,12 +11,12 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-
 load_dotenv()
 
 RANDOM_SEND = os.getenv("RANDOM_RULE")
 
-dp = Dispatcher(get_vk(), gid)
+vk = get_vk()
+dp = Dispatcher(vk, gid)
 
 
 def checker(message):
@@ -55,6 +55,6 @@ async def run():
 if __name__ == "__main__":
     if not os.path.exists('dialogs/'):
         os.mkdir('dialogs/')
-    task_manager = TaskManager(get_vk().loop)
+    task_manager = TaskManager(vk.loop)
     task_manager.add_task(run)
     task_manager.run(auto_reload=False)
