@@ -1,5 +1,5 @@
 import mc
-from vk_interaction import get_api, get_random_id
+from utils.vk_interaction import get_api, get_random_id
 import random
 import os
 
