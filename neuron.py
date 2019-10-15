@@ -6,7 +6,7 @@ import os
 
 def write_words(*args):
     text, file = args
-    with open(file, "a") as f:
+    with open(file, "a", encoding='utf-8') as f:
         f.write(text + ",")
 
 
@@ -14,7 +14,7 @@ async def send_and_gen_sentence(*args):
     file, peer_id = args
     if not os.path.exists(file):
         return
-    with open(file) as f:
+    with open(file, encoding='utf-8') as f:
         text_model = f.read().split(",")
     generator = mc.StringGenerator(learning_data=text_model, order=1)
     words = generator.generate(count=random.randint(1, 10))

@@ -11,6 +11,8 @@
 ```sh
 git clone https://github.com/kesha1225/NeuronBot.git
 
+cd NeuronBot
+
 pip3 install -r requirements.txt
 ```
 ### Настройка(конфиг .env):
@@ -41,14 +43,14 @@ receiver](https://github.com/prostomarkeloff/cbapi-receiver) и
     > Необходимо устнановить rabbitmq-server
     
     ```python3
-    uvicorn receiver:app
+    python3 receiver.py  # python3.7 на линуксе!!
     
     python3 bot.py
     ```
 2) Отладочный или просто расчитанный на небольшую нагрузку,
  работающий на longpoll.
     ```python3
-    python3 bot.py
+    python3 bot.py  # python3.7 на линуксе!!
     ```
 ### Дополнительные настройки
 
