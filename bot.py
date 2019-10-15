@@ -20,6 +20,7 @@ async def run():
     dp.setup_middleware(MessageCheckMiddleware())
     if PRODUCTION:
         from vk.bot_framework.extensions import RabbitMQ
+
         dp.setup_extension(RabbitMQ)
         dp.run_extension("rabbitmq", vk=vk, queue_name="bot_queue")
     else:
