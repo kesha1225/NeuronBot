@@ -1,5 +1,6 @@
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![code-style](https://img.shields.io/badge/code--style-black-%23000000)
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+<img src="https://img.shields.io/badge/python-3.6%2B-%23FFD242">
+<img src="https://img.shields.io/badge/code--style-black-%23000000">
 
 <h1>Генерация текста на основе сообщений в беседе Вконтакте с помощью цепей Маркова</h1>
 
