@@ -10,7 +10,6 @@ import os
 
 logging.basicConfig(level=logging.DEBUG)
 
-
 vk = get_vk()
 dp = Dispatcher(vk, GROUP_ID)
 

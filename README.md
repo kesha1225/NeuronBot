@@ -24,8 +24,8 @@ TOKEN=TOKEN  # Токен группы
 GROUP_ID=123123  # Айди группы
 RABBITMQ_QUEUE=some_queue  # Название очереди rabbitmq
 RABBITMQ_URL=amqp://guest:guest@127.0.0.1/  # url локальной очереди
-VK_SECRET_KEY="SOME_SECRET_KEY"  # Секретный ключ от cb-api
-VK_CONF_CODE="123ABCDF789"  # Код подтверждения cb-api
+VK_SECRET_KEY=SOME_SECRET_KEY  # Секретный ключ от cb-api
+VK_CONF_CODE=123ABCDF789  # Код подтверждения cb-api
 ```
 
 ### Запуск
