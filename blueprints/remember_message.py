@@ -10,7 +10,7 @@ bp = Blueprint()
 
 @bp.message_handler()
 async def undefined(message: types.Message, data: dict):
-    if random.randint(0, 33) == 24 and RANDOM_SEND == 1:
+    if random.randint(0, 33) == 24 and RANDOM_SEND:
         async with BackgroundTask(
             send_and_gen_sentence,
             f"dialogs/dialogs{message.peer_id}.txt",
