@@ -1,16 +1,16 @@
 from vk import VK
 import random
-from utils import token
+from utils import TOKEN
 
 
 def get_api():
-    vk = VK(access_token=token)
+    vk = VK(access_token=TOKEN)
     api = vk.get_api()
     return api
 
 
 def get_vk():
-    vk = VK(access_token=token)
+    vk = VK(access_token=TOKEN)
     return vk
 
 
