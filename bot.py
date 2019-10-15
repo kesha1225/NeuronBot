@@ -5,7 +5,6 @@ from utils import GROUP_ID, PRODUCTION
 import logging
 from middlewares import MessageCheckMiddleware
 from blueprints import generate_bp, info_bp, remember_bp
-from vk.bot_framework.extensions import RabbitMQ
 import os
 
 logging.basicConfig(level=logging.DEBUG)
@@ -20,6 +19,7 @@ async def run():
     dp.setup_blueprint(remember_bp)
     dp.setup_middleware(MessageCheckMiddleware())
     if PRODUCTION:
+        from vk.bot_framework.extensions import RabbitMQ
         dp.setup_extension(RabbitMQ)
         dp.run_extension("rabbitmq", vk=vk, queue_name="bot_queue")
     else:
