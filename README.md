@@ -26,7 +26,6 @@ RANDOM_RULE, TOKEN и GROUP_ID.
 PRODUCTION=False  # Основная настройка запуска  
 RANDOM_RULE=True  # Будут ли отправляться случайные сообщения
 TOKEN=TOKEN  # Токен группы
-GROUP_ID=123123  # Айди группы
 RABBITMQ_QUEUE=some_queue  # Название очереди rabbitmq
 RABBITMQ_URL=amqp://guest:guest@127.0.0.1/  # url локальной очереди
 VK_SECRET_KEY=SOME_SECRET_KEY  # Секретный ключ от cb-api
@@ -55,9 +54,3 @@ receiver](https://github.com/prostomarkeloff/cbapi-receiver) и
     ```python3
     python3 bot.py  # python3.7 на линуксе!!
     ```
-### Дополнительные настройки
-
-Размер предложений, по умолчанию от 1 до 10 слов.
-```
-words = generator.generate(count=random.randint(1, 10)) 
-```
