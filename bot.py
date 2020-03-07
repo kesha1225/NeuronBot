@@ -22,6 +22,14 @@ async def run():
     dp.setup_blueprint(remember_bp)
     dp.setup_middleware(MessageCheckMiddleware())
     if PRODUCTION:
+        try:
+            import starlette
+            import aio_pika
+            import uvicorn
+        except ImportError:
+            print("Для использования PRODUCTION мода вам нужно установить"
+                  " дополнительные библиотеки: starlette, aio_pika, uvicorn")
+            exit(1)
         from vk.bot_framework.extensions import RabbitMQ
 
         dp.setup_extension(RabbitMQ)
@@ -36,4 +44,4 @@ if __name__ == "__main__":
         os.mkdir("dialogs/")
     task_manager = TaskManager(vk.loop)
     task_manager.add_task(run)
-    task_manager.run(auto_reload=False)
+    task_manager.run()

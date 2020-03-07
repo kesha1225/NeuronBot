@@ -16,7 +16,7 @@ git clone https://github.com/kesha1225/NeuronBot.git
 
 cd NeuronBot
 
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 ### Настройка(конфиг .env):
 
@@ -25,6 +25,7 @@ RANDOM_RULE, TOKEN и GROUP_ID.
 ```sh
 PRODUCTION=False  # Основная настройка запуска  
 RANDOM_RULE=True  # Будут ли отправляться случайные сообщения
+USUAL_SYNTAX=False # Подгонять ли сообщения под нормальный синтаксис с точками и заглавными буквами
 TOKEN=TOKEN  # Токен группы
 RABBITMQ_QUEUE=some_queue  # Название очереди rabbitmq
 RABBITMQ_URL=amqp://guest:guest@127.0.0.1/  # url локальной очереди
@@ -39,18 +40,22 @@ VK_CONF_CODE=123ABCDF789  # Код подтверждения cb-api
 **Для выбора первого установите в конфиге .env ```PRODUCTION=True```, а 
 для второго ```PRODUCTION=False```.**
 
-1) Полноценный запуск в работу с [cb-api
-receiver](https://github.com/prostomarkeloff/cbapi-receiver) и 
-очередью сообщений RabbitMQ.
-    > Необходимо устнановить rabbitmq-server
-    
-    ```python3
-    python3 receiver.py  # python3.7 на линуксе!!
-    
-    python3 bot.py
-    ```
-2) Отладочный или просто расчитанный на небольшую нагрузку,
+1) Отладочный или просто расчитанный на небольшую нагрузку,
  работающий на longpoll.
-    ```python3
-    python3 bot.py  # python3.7 на линуксе!!
-    ```
+
+```sh
+python bot.py
+```
+
+2) Полноценный запуск в работу с cb-api receiver и очередью сообщений RabbitMQ.
+Для него вам понадобится установить дополнительные библиотеки:
+```
+pip install starlette uvicorn aio_pika
+```
+> Необходимо устнановить rabbitmq-server
+    
+```sh
+python receiver.py
+    
+python bot.py
+```

@@ -1,8 +1,12 @@
 from vk.bot_framework import BaseMiddleware
 from vk.bot_framework import SkipHandler
-from vk.types import BaseEvent, Message
+from vk.types import BaseEvent
 from vk import types
 import re
+
+link_pattern = re.compile(
+    r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
+)
 
 
 class MessageCheckMiddleware(BaseMiddleware):
@@ -12,10 +16,11 @@ class MessageCheckMiddleware(BaseMiddleware):
             return data
 
         event: types.MessageNew
-        if event.object.message.action.type == "chat_invite_user":
+        if (
+            event.object.message.action is not None
+            and event.object.message.action.type == "chat_invite_user"
+        ):
             return data
-
-        link_pattern = r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
 
         message_text = event.object.message.text
         from_id = event.object.message.from_id

@@ -1,9 +1,5 @@
-https://github.com/prostomarkeloff/vk.py/archive/master.zip
 mc.py
 python-dotenv
-starlette
 ujson
-uvloop
 environs
-aio_pika
-uvicorn
+aiofile

@@ -11,3 +11,4 @@ RABBITMQ_URL = os.getenv("RABBITMQ_URL")
 VK_SECRET_KEY = os.getenv("VK_SECRET_KEY")
 VK_CONF_CODE = os.getenv("VK_CONF_CODE")
 PRODUCTION = True if os.getenv("PRODUCTION") == "True" else False
+USUAL_SYNTAX = True if os.getenv("USUAL_SYNTAX") == "True" else False
