@@ -13,7 +13,7 @@ async def undefined(message: types.Message, _):
         return
     if random.randint(0, 33) == 24 and RANDOM_SEND:
         await send_and_gen_sentence(
-            "dialogs/dialogs{message.peer_id}.txt", message.peer_id
+            f"dialogs/dialogs{message.peer_id}.txt", message.peer_id
         )
 
     await write_words(message.text, f"dialogs/dialogs{message.peer_id}.txt")
