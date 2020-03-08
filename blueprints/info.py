@@ -8,6 +8,6 @@ bp = Blueprint()
 @bp.message_handler(commands=["info"])
 async def info(message: types.Message, _):
     await message.answer(
-        "Доступные команды:\n/gen - генерация текста\n"
+        "Доступные команды:\n/gen или /g - генерация текста\n"
         "/clear - очистка базы текста для данной беседы"
     )
