@@ -1,5 +1,7 @@
 import logging
 
+from aio_pika.pool import Pool
+
 from ..dispatcher.extension import BaseExtension
 from vk.constants import JSON_LIBRARY
 
@@ -25,10 +27,10 @@ class RabbitMQ(BaseExtension):
             self._vk = vk
             self._queue_name = queue_name
             self._url = rabbitmq_url
-            self._conn_pool = aio_pika.Pool(
+            self._conn_pool = Pool(
                 self.get_connection, max_size=max_connections, loop=vk.loop
             )
-            self._chann_pool = aio_pika.Pool(
+            self._chann_pool = Pool(
                 self.get_channel, max_size=max_channels, loop=vk.loop
             )
         else:

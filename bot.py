@@ -28,7 +28,7 @@ async def run():
             import uvicorn
         except ImportError:
             print("Для использования PRODUCTION мода вам нужно установить"
-                  " дополнительные библиотеки: starlette, aio_pika, uvicorn")
+                  " дополнительные библиотеки: starlette, aio-pika, uvicorn")
             exit(1)
         from vk.bot_framework.extensions import RabbitMQ
 
